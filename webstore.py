@@ -63,7 +63,7 @@ class Order:
         items_price=[]
         for item in self.items:
             items_price.append(item.price)
-        for num1, num2 in zip(items_price, self.quantity):
+        for num1, num2 in zip(items_price, quantity):
             total.append(num1 * num2)
         return sum(total)
 
@@ -71,8 +71,8 @@ item1=Item("D1",50.50, "red", "M")
 item2=Item("D1",45, "white", "M")
 customer1=Customer("Bloggs", "Joe", "380661112233", "NY, Brooklyn")
 customer2=Customer("Jones", "Bridgit", "380661112235", "London, BY")
-order1=Order(customer1.name,[item1,item2],[1,2])
-to_pay=order1.total_amount([item1,item2],[1,2])
+order1=Order(customer1.name,[item1,item2],[2,2])
+to_pay=order1.total_amount([item1,item2],[2,2])
 
 print(to_pay)
 print(order1)
