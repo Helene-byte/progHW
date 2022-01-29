@@ -61,8 +61,6 @@ class Order:
     def total_amount(self,items,quantity):
         total=[]
         items_price=[]
-        self.quantity=quantity
-        self.items=items
         for item in self.items:
             items_price.append(item.price)
         for num1, num2 in zip(items_price, self.quantity):
