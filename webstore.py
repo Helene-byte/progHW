@@ -72,7 +72,5 @@ item2=Item("D1",45, "white", "M")
 customer1=Customer("Bloggs", "Joe", "380661112233", "NY, Brooklyn")
 customer2=Customer("Jones", "Bridgit", "380661112235", "London, BY")
 order1=Order(customer1.name,[item1,item2],[2,2])
-# to_pay=order1.total_amount([item1,item2],[2,2])
 
-# print(to_pay)
 print(order1)
