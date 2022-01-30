@@ -1,5 +1,3 @@
-import traceback
-import logging
 
 class Human:
     """
@@ -52,11 +50,9 @@ class StudentGroup:
         self.students.remove(student)
 
     def find_student_by_surname(self, surname, students):
-        try:
-            target_student = [vars(s) for s in students if s.surname == surname]
-            return target_student
-        except Exception as e:
-            logging.error(traceback.format_exc())
+        return [vars(s) for s in students if s.surname == surname]
+
+
 
     def aslist(self):
         return self.students
@@ -78,4 +74,4 @@ group1.add_student(student2)
 group1.add_student(student3)
 # group1.delete_student(student1)
 # print(group1)
-print(group1.find_student_by_surname(surname="?", students=group1))
+print(group1.find_student_by_surname(surname="Karlov", students=group1))

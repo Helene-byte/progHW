@@ -52,10 +52,10 @@ class Order:
 
     def __str__(self):
 
-        return "Customer: " + self.customer + "\n" \
-               + "Items: " +  ('[%s]' % ', '.join(map(str, self.items))) + "\n"\
-               + "Quantity : " +( '[%s]' % ', '.join(map(str, self.quantity)))  + "\n"\
-               + "Total amount : " + str(self.total_amount(items = self.items, quantity =  self.quantity)) + "\n"\
+        return "Customer: " + str(vars(self.customer)) + "\n" \
+               + "Items: " + ('[%s]' % ', '.join(map(str, self.items))) + "\n" \
+               + "Quantity : " + ( '[%s]' % ', '.join(map(str, self.quantity))) + "\n" \
+               + "Total amount : " + str(self.total_amount(items = self.items, quantity = self.quantity)) + "\n" \
                + "+++++++++++++++++++++++"
 
     def total_amount(self,items,quantity):
@@ -71,6 +71,6 @@ item1=Item("D1",50.50, "red", "M")
 item2=Item("D1",45, "white", "M")
 customer1=Customer("Bloggs", "Joe", "380661112233", "NY, Brooklyn")
 customer2=Customer("Jones", "Bridgit", "380661112235", "London, BY")
-order1=Order(customer1.name,[item1,item2],[2,2])
+order1=Order(customer1,[item2,item2],[1,1])
 
 print(order1)
